@@ -6,10 +6,15 @@
     <title>instagram</title>
     {% if request.user.is_authenticated %}
     <p>
-      Hello, {{ request.user.username }}| <a href="{% url 'logout'%}">logout</a>
+      <a href="{% url 'home'%}">home</a> |
+      <a href="{% url 'logout'%}">logout</a>
     </p>
+    <p>Hello, {{ request.user.username }}|</p>
     {% else %}
-    <p><a href="{% url 'register'%}">register</a> |<a href="#">login</a></p>
+    <p>
+      <a href="{% url 'register'%}">register</a> |
+      <a href="{% url 'login'%}">login</a>
+    </p>
     {% endif %}
   </head>
 
