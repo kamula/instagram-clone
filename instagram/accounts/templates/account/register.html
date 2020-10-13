@@ -1,0 +1,8 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Register</h2>
+<form method="POST" action="">
+    {% csrf_token %} {% for field in registrationform %} {{field.label_tag}} {{field}} {% for error in field.errors %}
+    <small style="color: red;">{{error}}</small> {% endfor %} {% endfor %}
+    <button type="submit">Register</button>
+</form>
+{% endblock content %}

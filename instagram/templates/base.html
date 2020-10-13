@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>instagram</title>
+    {% if request.user.is_authenticated %}
+    <p>
+      Hello, {{ request.user.username }}| <a href="{% url 'logout'%}">logout</a>
+    </p>
+    {% else %}
+    <p><a href="{% url 'register'%}">register</a> |<a href="#">login</a></p>
+    {% endif %}
+  </head>
+
+  <body>
+    {% block content %} {% endblock content %}
+  </body>
+</html>
