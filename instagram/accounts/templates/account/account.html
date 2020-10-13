@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<h2>Login</h2>
+<h2>Account</h2>
 <form method="POST">
     {% csrf_token %} {% for field in login_form %} 
     <p>
@@ -7,18 +7,19 @@
     </p>
     {% endfor %}
 
-    {% for field in login_form %}
-        {% for error in login_form.field.errors %}
+    {% for field in account_form %}
+        {% for error in account_form.errors %}
             <small style="color: red;">{{error}}</small> 
         {% endfor %} 
     
     {% endfor %}
      
-    {% if login_form.non_field_errors %}
+    {% if account_form.non_field_errors %}
         <div style="color:red;">
-        <p>{{login_form.non_field_errors}}</p>
+        <p>{{account_form.non_field_errors}}</p>
     </div>
     {% endif %}
-    <button type="submit">Login</button>
+    <button type="submit">Save changes</button>
 </form>
 {% endblock content %}
+z
