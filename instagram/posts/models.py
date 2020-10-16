@@ -20,7 +20,7 @@ class userPost(models.Model):
     author          = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)  
     slug            = models.SlugField(blank=True,unique=True)
     # def __str__(self):
-    #     return self.description
+    #     return self.author
 
 # delete image if post is deleted
 @receiver(post_delete,sender = userPost)
