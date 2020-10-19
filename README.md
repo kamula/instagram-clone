@@ -1,2 +1,2 @@
 # instagram-clone
-django instagram clone
+YADC django instagram clone
